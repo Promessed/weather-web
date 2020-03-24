@@ -9,7 +9,7 @@ request({url , json: true}, (error, {body})=>{
     }else if(body.error){
      callback('Unable to find location',undefined)
     }else{
-     callback(undefined, body.daily.data[0].summary+'There is a '+body.currently.precipProbability+ '% chance of rain,'+body.currently.temperature + ' degrees out there..')
+     callback(undefined, body.daily.data[0].summary+'There is a '+body.currently.precipProbability+ '% chance of rain,'+body.currently.temperature + ' degrees out there, where the lowest degree is '+body.daily.data[0].temperatureLow+' degrees and the highest is '+body.daily.data[0].temperatureHigh+' degrees')
     
     }
 
